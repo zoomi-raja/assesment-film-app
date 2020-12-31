@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
+import { Body, Controller, Post, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { RegisterDto } from '../dto/register.dto';
 import { AuthService } from '../service/auth.service';
@@ -12,8 +12,14 @@ export class AuthController {
   }
 
   @Post('/register')
-  async register(@Body() user: RegisterDto) {
+  async register(
+    @Body() user: RegisterDto,
+    @Res({ passthrough: true }) response: Response,
+  ) {
     const result = await this.authService.register(user);
+    //set cookie
+    const token = this.authService.generateJWT(result);
+    response.cookie('jwt-session', token.access_token);
     return result;
   }
 }
