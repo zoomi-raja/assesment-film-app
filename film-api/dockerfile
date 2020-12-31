@@ -1,0 +1,11 @@
+FROM node:12.19.0-stretch
+
+WORKDIR /app
+
+COPY package.json ./
+
+RUN yarn install && yarn global add @nestjs/cli
+
+EXPOSE 3000
+
+COPY . .

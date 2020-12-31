@@ -1,0 +1,30 @@
+version: "2"
+services:
+  api:
+    image: film-api
+    container_name: film-api
+    build: ./film-api
+    command: yarn run start:dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./film-api:/app
+      - dist:/app/dist
+    environment:
+      - DOCKER=true
+  db:
+    image: mysql:5.7
+    container_name: films_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: films
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - persistent:/var/lib/mysql
+volumes:
+    persistent:
+    dist:
