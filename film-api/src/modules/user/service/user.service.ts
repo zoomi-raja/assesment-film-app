@@ -33,4 +33,11 @@ export class UserService {
     const { password, ...result } = userObj;
     return result;
   }
+
+  /** get user by email */
+  findByEmail(email: string): Promise<User> {
+    return this.userRepository.findOne({
+      where: [{ email }],
+    });
+  }
 }
