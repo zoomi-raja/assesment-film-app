@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   JoinTable,
   ManyToMany,
   OneToMany,
@@ -64,6 +65,6 @@ export class FilmEntity {
   })
   genres: GenreEntity[];
   /** one to many relation with comments */
-  @OneToMany(() => CommentEntity, (comment) => comment.comments)
+  @OneToMany(() => CommentEntity, (comment) => comment.film)
   comments: CommentEntity[];
 }

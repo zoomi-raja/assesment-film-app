@@ -1,0 +1,16 @@
+{
+  "type": "mysql",
+  "host": "films_db",
+  "port": 3306,
+  "logging": false,
+  "username": "user",
+  "password": "password",
+  "database": "films",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "migrations": ["dist/**/migration/*.js"],
+  "synchronize": false,
+  "cli": {
+    "entitiesDir": "src",
+    "migrationsDir": "src/migration"
+  }
+}

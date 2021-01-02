@@ -4,6 +4,8 @@ services:
     image: film-api
     container_name: film-api
     build: ./film-api
+    depends_on: 
+     - db
     command: yarn run start:dev
     ports:
       - 3000:3000

@@ -6,6 +6,7 @@ import {
   UpdateDateColumn,
   PrimaryGeneratedColumn,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 
 @Entity('comments')
@@ -32,5 +33,6 @@ export class CommentEntity {
   updated_at: Date;
 
   @ManyToOne(() => FilmEntity, (film) => film.comments)
-  comments: FilmEntity;
+  @JoinColumn({ name: 'film_id' })
+  film: FilmEntity;
 }
