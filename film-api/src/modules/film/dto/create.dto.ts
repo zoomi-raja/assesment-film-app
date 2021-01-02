@@ -8,8 +8,8 @@ import {
   IsNotEmpty,
   IsOptional,
 } from 'class-validator';
-import { Genre } from 'src/modules/genre/models/genre.interface';
 import { Film } from '../models/film.interface';
+import { Genre } from '../../genre/models/genre.interface';
 
 export class CreateDto implements Film {
   id?: number;

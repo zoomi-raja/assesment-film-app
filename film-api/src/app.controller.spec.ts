@@ -13,10 +13,13 @@ describe('AppController', () => {
 
     appController = app.get<AppController>(AppController);
   });
-
+  const apiVer = {
+    name: 'films api',
+    version: 'v1.0',
+  };
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "API Version!"', () => {
+      expect(appController.getHello()).toStrictEqual(apiVer);
     });
   });
 });

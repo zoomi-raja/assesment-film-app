@@ -1,5 +1,5 @@
+import { User } from '../../user/models/user.interface';
 import { IsEmail, IsEmpty, IsNotEmpty, IsOptional } from 'class-validator';
-import { User } from 'src/modules/user/models/user.interface';
 
 export class RegisterDto implements User {
   id?: number;

@@ -8,6 +8,7 @@ import { FilmService } from './service/film.service';
 
 @Module({
   imports: [GenreModule, CommentModule, TypeOrmModule.forFeature([FilmEntity])],
+  exports: [FilmService],
   providers: [FilmService],
   controllers: [FilmController],
 })

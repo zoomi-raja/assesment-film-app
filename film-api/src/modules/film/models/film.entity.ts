@@ -1,5 +1,5 @@
-import { CommentEntity } from 'src/modules/comment/models/comment.entity';
-import { GenreEntity } from 'src/modules/genre/models/genre.entity';
+import { CommentEntity } from '../../comment/models/comment.entity';
+import { GenreEntity } from '../../genre/models/genre.entity';
 import {
   Column,
   CreateDateColumn,

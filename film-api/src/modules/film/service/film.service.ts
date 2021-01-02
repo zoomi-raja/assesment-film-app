@@ -1,14 +1,14 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { GenreService } from 'src/modules/genre/service/genre.service';
-import { Comment } from 'src/modules/comment/models/comment.interface';
-import { CommentService } from 'src/modules/comment/service/comment.service';
-import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
+import { Comment } from '../../comment/models/comment.interface';
+import { GenreService } from '../../genre/service/genre.service';
+import { CommentService } from '../../comment/service/comment.service';
+import { DublicateException, Error } from '../../../exceptions/dublicate.exception';
 
 import { Repository } from 'typeorm';
 import { Film } from '../models/film.interface';
-import { Paginate } from 'src/utilities/paginate';
+import { Paginate } from '../../../utilities/paginate';
 import { FilmEntity } from '../models/film.entity';
 
 @Injectable()

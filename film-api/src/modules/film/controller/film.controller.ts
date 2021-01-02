@@ -1,9 +1,18 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post, Req, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard';
-import { CreateCmtDto } from 'src/modules/comment/dto/createCmt.dto';
-import { CreateDto } from '../dto/create.dto';
+import {
+  Get,
+  Req,
+  Body,
+  Post,
+  Param,
+  UseGuards,
+  Controller,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { Film } from '../models/film.interface';
+import { CreateDto } from '../dto/create.dto';
 import { FilmService } from '../service/film.service';
+import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
+import { CreateCmtDto } from '../../comment/dto/createCmt.dto';
 
 @Controller('film')
 export class FilmController {

@@ -1,5 +1,5 @@
 import { Genre } from '../../genre/models/genre.interface';
-import { Comment } from 'src/modules/comment/models/comment.interface';
+import { Comment } from '../../comment/models/comment.interface';
 
 export interface Film {
   id?: number;

@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from '../models/user.entity';
 
 import { hashPassword } from '../../../utilities/hash';
-import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
+import { DublicateException, Error } from '../../../exceptions/dublicate.exception';
 
 @Injectable()
 export class UserService {

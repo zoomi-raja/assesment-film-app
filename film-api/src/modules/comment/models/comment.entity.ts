@@ -1,8 +1,7 @@
-import { FilmEntity } from 'src/modules/film/models/film.entity';
+import { FilmEntity } from '../../film/models/film.entity';
 import {
   Column,
   Entity,
-  ManyToMany,
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,

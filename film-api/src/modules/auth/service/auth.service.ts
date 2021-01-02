@@ -2,10 +2,10 @@ import { JwtService } from '@nestjs/jwt';
 import { Injectable } from '@nestjs/common';
 import { RegisterDto } from '../dto/register.dto';
 
-import { User } from 'src/modules/user/models/user.interface';
-import { UserService } from 'src/modules/user/service/user.service';
-import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
-import { comparePasswords } from 'src/utilities/hash';
+import { User } from '../../user/models/user.interface';
+import { UserService } from '../../user/service/user.service';
+import { comparePasswords } from '../../../utilities/hash';
+import { DublicateException, Error } from '../../../exceptions/dublicate.exception';
 
 @Injectable()
 export class AuthService {
