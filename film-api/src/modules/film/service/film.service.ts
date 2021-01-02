@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
 import { GenreService } from 'src/modules/genre/service/genre.service';
@@ -16,6 +16,7 @@ export class FilmService {
   ) {}
   /** create film entry in storage */
   async saveFilm(film: Film): Promise<Film> {
+    film.slug = `${film.name}-${Date.now()}`;
     film.genres = await this.genreService.getGenresByIds(film.genre_ids);
     /** validate if provided genre exists */
     if (film.genres.length <= 0) {
@@ -37,5 +38,27 @@ export class FilmService {
       items,
       count,
     };
+  }
+  /** get by id */
+  async getFilm(id: number): Promise<Film> {
+    return await this.filmRepository.findOne(id, {
+      relations: ['genres'],
+    });
+  }
+
+  /** get by slug */
+  async getFilmBySlug(slug: string): Promise<Film> {
+    const result = await this.filmRepository.findOne(
+      {
+        slug,
+      },
+      {
+        relations: ['genres'],
+      },
+    );
+    if (!result) {
+      throw new NotFoundException();
+    }
+    return result;
   }
 }

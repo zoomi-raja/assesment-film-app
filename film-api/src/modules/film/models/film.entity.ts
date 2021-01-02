@@ -17,8 +17,14 @@ export class FilmEntity {
   @Column()
   name: string;
 
+  @Column()
+  slug: string;
+
   @Column({ default: '' })
   photo: string;
+
+  @Column()
+  user_id: number;
 
   @Column()
   rating: number;

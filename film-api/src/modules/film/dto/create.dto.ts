@@ -17,6 +17,12 @@ export class CreateDto implements Film {
   @IsNotEmpty()
   name: string;
 
+  @IsEmpty()
+  slug: string;
+
+  @IsEmpty()
+  user_id: number;
+
   @IsOptional()
   photo: string;
 
