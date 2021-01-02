@@ -1,4 +1,6 @@
 import { Genre } from '../../genre/models/genre.interface';
+import { Comment } from 'src/modules/comment/models/comment.interface';
+
 export interface Film {
   id?: number;
   name: string;
@@ -11,6 +13,7 @@ export interface Film {
   country: string;
   rel_date: string;
   description: string;
+  comments?: Comment[];
   ticket_price: number;
   created_at?: Date;
   updated_at?: Date;

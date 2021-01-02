@@ -1,11 +1,15 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
+import { Injectable, NotFoundException } from '@nestjs/common';
+
 import { GenreService } from 'src/modules/genre/service/genre.service';
-import { Paginate } from 'src/utilities/paginate';
+import { Comment } from 'src/modules/comment/models/comment.interface';
+import { CommentService } from 'src/modules/comment/service/comment.service';
+import { DublicateException, Error } from 'src/exceptions/dublicate.exception';
+
 import { Repository } from 'typeorm';
-import { FilmEntity } from '../models/film.entity';
 import { Film } from '../models/film.interface';
+import { Paginate } from 'src/utilities/paginate';
+import { FilmEntity } from '../models/film.entity';
 
 @Injectable()
 export class FilmService {
@@ -13,6 +17,7 @@ export class FilmService {
     @InjectRepository(FilmEntity)
     private filmRepository: Repository<FilmEntity>,
     private genreService: GenreService,
+    private commentService: CommentService,
   ) {}
   /** create film entry in storage */
   async saveFilm(film: Film): Promise<Film> {
@@ -53,12 +58,20 @@ export class FilmService {
         slug,
       },
       {
-        relations: ['genres'],
+        relations: ['genres', 'comments'],
       },
     );
     if (!result) {
       throw new NotFoundException();
     }
     return result;
+  }
+  /** save film comment */
+  async saveComment(comment: Comment): Promise<Comment> {
+    const film = await this.filmRepository.findOne(comment.film_id);
+    if (!film) {
+      throw new NotFoundException('no such movie exists in database');
+    }
+    return await this.commentService.saveFilm(comment);
   }
 }

@@ -1,3 +1,4 @@
+import { CommentEntity } from 'src/modules/comment/models/comment.entity';
 import { GenreEntity } from 'src/modules/genre/models/genre.entity';
 import {
   Column,
@@ -5,6 +6,7 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -47,6 +49,7 @@ export class FilmEntity {
   @UpdateDateColumn({ name: 'updated_at' })
   updated_at: Date;
 
+  /** many to many relation with genres */
   @ManyToMany(() => GenreEntity, (genre) => genre.films)
   @JoinTable({
     name: 'film_genre', //pivot table name
@@ -60,4 +63,7 @@ export class FilmEntity {
     },
   })
   genres: GenreEntity[];
+  /** one to many relation with comments */
+  @OneToMany(() => CommentEntity, (comment) => comment.comments)
+  comments: CommentEntity[];
 }
