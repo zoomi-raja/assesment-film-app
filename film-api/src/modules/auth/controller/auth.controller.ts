@@ -11,7 +11,7 @@ export class AuthController {
   @Post('/login')
   async login(@Req() req, @Res({ passthrough: true }) response) {
     const token = this.authService.generateJWT(req.user);
-    response.cookie('jwt', token.access_token);
+    response.cookie('jwt-session', token.access_token);
     return { user: req.user };
   }
 

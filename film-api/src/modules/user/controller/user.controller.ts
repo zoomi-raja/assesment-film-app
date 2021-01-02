@@ -1,6 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard';
 
 @Controller('user')
 export class UserController {
-  //todo only one route to get logged in user info
+  @UseGuards(JwtAuthGuard)
+  @Get('profile')
+  getProfile(@Req() req) {
+    const { iat, exp , ...result } = req.user;
+    return { ...result };
+  }
 }
