@@ -5,7 +5,7 @@ export class AppService {
   intro(): any {
     return {
       name: 'films api',
-      version: 'v1.0'
+      version: 'v1.0',
     };
   }
 }

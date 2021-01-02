@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import typeORMConfig from './config/database.config';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
+import { FilmModule } from './modules/film/film.module';
+import { GenreModule } from './modules/genre/genre.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { AuthModule } from './modules/auth/auth.module';
     TypeOrmModule.forRoot(typeORMConfig()),
     /**bootstrap app */
     AuthModule,
+    FilmModule,
+    GenreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
