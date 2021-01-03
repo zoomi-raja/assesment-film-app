@@ -1,6 +1,8 @@
-# Manage Film Application
+# Film Application
 
-<img src=“https://github.com/zoomi-raja/assesment-film-app/blob/main/screen1.png”>
+![picture](screen3.png)
+![picture](screen1.png)
+![picture](screen2.png)
 
 ## Assessment Test solution
 
