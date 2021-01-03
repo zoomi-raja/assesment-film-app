@@ -23,7 +23,10 @@ function Header() {
     <Link to="/join" className="Header-btn">Join</Link>
   </Fragment>
   if(loggedIn)
-    html = <a href="/films" className="Header-btn" onClick = {handleLogout}>Logout</a>
+    html = <Fragment>
+        <Link to="/films/create" className="Header-btn">Create</Link>
+        <a href="/films" className="Header-btn" onClick = {handleLogout}>Logout</a>
+    </Fragment>;
   return (
     <header className="Header">
       <Link to="/films" className="Header-logo">

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import List from './screens/list';
 import Header from './compnents/header';
 import Detail from './screens/detail';
+import Create from './screens/create';
 import NotFound from './screens/not-found';
 //auth components
 import Join from './screens/auth/join';
@@ -18,15 +19,23 @@ import {authContext} from './context/auth';
 import './index.css';
 
 // utilities
-import movies from './movies.json';
 import { isAuth } from './utilities/auth';
+import { requestApi } from './utilities/request';
 
 function App(){
+  const [films,setFilms] = useState({loading:true,data:[]});
   const [loggedIn,setLoggedIn] = useState(false);
   // set value from storage
   useEffect(()=>{
     setLoggedIn(isAuth());
   },[setLoggedIn]);
+  useEffect(()=>{
+    async function fetchDate(){
+      const films = await requestApi({url:'/film'});
+      setFilms({loading:false,data:films.items});
+    }
+    fetchDate();
+  },[setFilms]);
 
   return (
   <Router>
@@ -34,7 +43,11 @@ function App(){
       <Header />
         <Switch>
           <Route exact path="/films">
-            <List data={ movies } />
+            <List data={ films.data } />
+          </Route>
+
+          <Route path="/films/create">
+            <Create />
           </Route>
 
           <Route path="/films/:slug">

@@ -30,10 +30,10 @@ function Login() {
     e.preventDefault();
     const data = {email, password};
     try{
-      const json = fetch( `${config.API_URL}/auth/login`, { method: 'POST',
+      const json = await fetch( `${config.API_URL}/auth/login`, { method: 'POST',
         body: JSON.stringify(data),
         headers:{ 'Content-Type': 'application/json' } });
-      const response = await (await json).json();
+      const response = await json.json();
       if(response.error)
         setError(response.message);
       else{

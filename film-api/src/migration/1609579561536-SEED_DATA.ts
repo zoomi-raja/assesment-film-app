@@ -67,14 +67,14 @@ export class SEEDDATA1609579561536 implements MigrationInterface {
     await this.addComment(film_id);
 
     const film3 = getRepository(FilmEntity).create({
-      name: 'avatar',
-      slug: `avatar_${Date.now()}`,
-      photo: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg',
+      name: 'The Wolf of Wall Street',
+      slug: `wolf_wall_street_${Date.now()}`,
+      photo: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNDIwMDIxNzk3Ml5BMl5BanBnXkFtZTgwMTg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg',
       rating: 4,
       country: 'USA',
       user_id: this.user_id,
-      rel_date: '18 Dec 2009',
-      description: 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',
+      rel_date: '18 Dec 2013',
+      description: 'Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.',
       ticket_price: 130,
     });
     film3.genres = await getRepository(GenreEntity).findByIds([2, 3]);

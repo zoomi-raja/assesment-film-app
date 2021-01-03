@@ -31,6 +31,10 @@ export function isAuth(){
     return false;
 }
 
+export function getToken(){
+  return localStorage.getItem('film-token')
+}
+
 export function logout(){
   localStorage.removeItem('film-token')
   localStorage.removeItem('user')

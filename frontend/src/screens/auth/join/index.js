@@ -30,10 +30,10 @@ function Join() {
      e.preventDefault();
     const data = {name, email, password, passwordRe:rePassword};
     try{
-      const json = fetch( `${config.API_URL}/auth/register`, { method: 'POST',
+      const json = await fetch( `${config.API_URL}/auth/register`, { method: 'POST',
         body: JSON.stringify(data),
         headers:{ 'Content-Type': 'application/json' } });
-      const response = await (await json).json();
+      const response = await json.json();
       if(response.error)
         setError(response.message);
       else{
