@@ -16,7 +16,7 @@ function Login() {
   const [password,setPassword] = useState('');
   const [toHome,setToHome] = useState(false);
   //auth context
-  const {loggedIn,setLoggedIn} = useContext(authContext);
+  const {setLoggedIn} = useContext(authContext);
 
   //utilityfunction
   const handleEmail = (e) => {
