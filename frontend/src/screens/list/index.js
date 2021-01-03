@@ -1,4 +1,5 @@
 // styles
+import { Link } from 'react-router-dom';
 import { NoRecord } from '../../compnents/ui/no-record/no-record';
 import './index.css';
 
@@ -12,8 +13,8 @@ function List({ data = [] }) {
       <div className="List">
         {data && data.map((item, index) => (
           <div className="List-item" key={index}>
-            <a
-              href={`/films/${item.slug}`}
+            <Link
+              to={`/films/${item.slug}`}
               className="List-itemLink"
             >
               <div
@@ -22,7 +23,7 @@ function List({ data = [] }) {
               />
   
               <div className="List-itemTitle">{item.name} ({item.rel_date})</div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@ import './index.css';
 function Header() {
   return (
     <header className="Header">
-      <Link to="/" className="Header-logo">
+      <Link to="/films" className="Header-logo">
         <h1 className="Header-logoText">Movies</h1>
       </Link>
   

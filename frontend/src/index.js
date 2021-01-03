@@ -7,13 +7,18 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import List from './screens/list';
 import Header from './compnents/header';
 import Detail from './screens/detail';
-import NotFound from './screens/not-found'
+import NotFound from './screens/not-found';
+//auth components
+import Join from './screens/auth/join';
+import Login from './screens/auth/login';
+
 
 // styles
 import './index.css';
 
-// data
+// utilities
 import movies from './movies.json';
+import { isAuth } from './utilities/auth';
 
 ReactDOM.render(
   <StrictMode>
@@ -33,6 +38,18 @@ ReactDOM.render(
           <Route exact path="/">
             <Redirect to="/films" />
           </Route>
+
+          {!isAuth() && 
+            <Fragment>
+              <Route path="/login">
+                <Login />
+              </Route>
+
+              <Route path="/join">
+                <Join />
+              </Route>
+            </Fragment>
+          }
   
           <Route path="*">
             <NotFound />
