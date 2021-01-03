@@ -11,6 +11,10 @@ Each entity of application lies in its separate codebase. docker is used to spin
 - Backend (film-api)
 - Frontend (frontend)
 
+`Technolog used`
+- [nestjs](https://nestjs.com/)
+- [react](https://reactjs.org/)
+
 **Minor detail why i went with following architecture**
 
 - Based on the initial interview, It was asked to used nest.js framework.
@@ -61,7 +65,10 @@ Each function in application is precise and short for the purpose of readbilty a
 
 ### FrontEnd ([Film](https://github.com/zoomi-raja/assesment-film-app/tree/main/frontend))
 
-- Images upload functionlity will improve over all app experince
+- react context is used to manage state redux is good substitute but will be overkil for this project.
+
+- Images upload functionlity will improve over all app experince.
+- User avatar is also dummy
 
 `Folder Structure and Important files`
 
