@@ -1,5 +1,6 @@
 // styles
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { authContext } from '../../context/auth';
 import { requestApi } from '../../utilities/request';
 import './index.css';
 
@@ -8,6 +9,8 @@ function Comment({data,film_id,onAdd}) {
   const [name,setName] = useState('');
   const [errors,setErrors] = useState({});
   const [comment,setComment] = useState('');
+  //auth context
+  const {loggedIn} = useContext(authContext);
   let options = {  
     year: "numeric", month: "short",day: "numeric"  
   }; 
@@ -43,18 +46,21 @@ function Comment({data,film_id,onAdd}) {
     <div className="Comments">
       <h3 className="Comments-heading">Reviews</h3>
 
-      <form action="post" className="Comments-form" onSubmit={handleRegister}>
-        <label className="Form-label" htmlFor="name">
-          <span className="Form-text">Name</span>
-          <input value={name} onChange={(e)=>setName(e.target.value)} className="Form-input" name="name" type="text" placeholder="Place enter name" required/>
-          {errors.name && <span className="error">{errors.name}</span>}
-        </label>
-        <label className="Form-label">
-          <textarea value={comment} onChange={(e)=>setComment(e.target.value)} className="Form-textarea" placeholder="Share your thoughts..."/>
-          {errors.comment && <span className="error">{errors.comment}</span>}
-        </label>
-        <button className="Form-btn" type="submit">Submit</button>
-      </form>
+
+      {loggedIn &&
+        <form action="post" className="Comments-form" onSubmit={handleRegister}>
+          <label className="Form-label" htmlFor="name">
+            <span className="Form-text">Name</span>
+            <input value={name} onChange={(e)=>setName(e.target.value)} className="Form-input" name="name" type="text" placeholder="Place enter name" required/>
+            {errors.name && <span className="error">{errors.name}</span>}
+          </label>
+          <label className="Form-label">
+            <textarea value={comment} onChange={(e)=>setComment(e.target.value)} className="Form-textarea" placeholder="Share your thoughts..."/>
+            {errors.comment && <span className="error">{errors.comment}</span>}
+          </label>
+          <button className="Form-btn" type="submit">Submit</button>
+        </form>
+      }
       
       {(data || []).length > 0 && data.map(({ id,name,comment,created_at }) => (
         <div className="Comment" key={id}>
