@@ -17,6 +17,10 @@ export class GenreService {
     }
     return await this.genreRepository.findByIds(ids);
   }
+  /** get all genres */
+  async getGenres(): Promise<Genre[]> {
+    return await this.genreRepository.find();
+  }
   /** create genre entry in storage */
   async saveFilm(genre: Genre): Promise<Genre> {
     return this.genreRepository.save(genre);
