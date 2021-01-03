@@ -12,7 +12,7 @@ export class AuthController {
   async login(@Req() req, @Res({ passthrough: true }) response) {
     const token = this.authService.generateJWT(req.user);
     response.cookie('jwt-session', token.access_token);
-    return { user: req.user };
+    return { user: req.user, token };
   }
 
   @Post('/register')
@@ -24,6 +24,6 @@ export class AuthController {
     //set cookie
     const token = this.authService.generateJWT(result);
     response.cookie('jwt-session', token.access_token);
-    return result;
+    return { user: result, token };
   }
 }

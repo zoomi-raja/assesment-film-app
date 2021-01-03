@@ -40,4 +40,10 @@
   border-radius: 6px;
   margin-bottom: 2px;
 }
+.g-error{
+  color: red;
+  padding: 12px;
+  display: block;
+  text-align: center;
+}
 
