@@ -14,6 +14,18 @@ services:
       - dist:/app/dist
     environment:
       - DOCKER=true
+  frontend:
+    image: film_frontend
+    container_name: film_frontend
+    build: ./frontend
+    ports:
+      - 80:3000
+    volumes:
+      - ./frontend/:/app
+      - f_front:/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
   db:
     image: mysql:5.7
     container_name: films_db
@@ -28,5 +40,6 @@ services:
       - ./dump:/docker-entrypoint-initdb.d
       - persistent:/var/lib/mysql
 volumes:
+    f_front:
     persistent:
     dist:

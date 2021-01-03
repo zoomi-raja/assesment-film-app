@@ -1,0 +1,62 @@
+[
+  {
+    "user_id":1,
+    "name": "Avatar",
+    "slug": "avatar_232323",
+    "rel_date": "18 Dec 2009",
+    "genre": "Action, Adventure, Fantasy",
+    "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "country": "USA",
+    "rating": "4",
+    "ticket_price": "890",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+  },
+  {
+    "user_id":1,
+    "name": "I Am Legend",
+    "slug": "I+Am+Legend+23232",
+    "rel_date": "14 Dec 2007",
+    "genre": "Drama, Horror, Sci-Fi",
+    "description": "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
+    "country": "USA",
+    "rating": "5",
+    "ticket_price": "533",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg"
+  },
+  {
+    "user_id":1,
+    "name": "300",
+    "slug": "300_sdsd",
+    "rel_date": "09 Mar 2007",
+    "genre": "Action, Drama, Fantasy",
+    "description": "King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.",
+    "country": "USA",
+    "rating": "2",
+    "ticket_price": "77",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwNTg5MzMwMV5BMl5BanBnXkFtZTcwMzA2NTIyMw@@._V1_SX1777_CR0,0,1777,937_AL_.jpg"
+  },
+  {
+    "user_id":1,
+    "name": "The Avengers",
+    "slug": "2012",
+    "rel_date": "04 May 2012",
+    "genre": "Action, Sci-Fi, Thriller",
+    "description": "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
+    "country": "USA",
+    "rating": "4",
+    "ticket_price": "81",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0NjY0NzE4OTReQTJeQWpwZ15BbWU3MDczODg2Nzc@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+  },
+  {
+    "user_id":1,
+    "name": "The Wolf of Wall Street",
+    "slug": "2013",
+    "rel_date": "25 Dec 2013",
+    "genre": "Biography, Comedy, Crime",
+    "description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+    "country": "USA",
+    "rating": "2",
+    "ticket_price": "786",
+    "photo": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDIwMDIxNzk3Ml5BMl5BanBnXkFtZTgwMTg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+  }
+  ]

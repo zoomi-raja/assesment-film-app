@@ -1,0 +1,54 @@
+.List-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+}
+
+@media (min-width: 769px) {
+  .List-wrapper {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+.List {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.List-item {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 481px) { .List-item { width: 50%; } }
+@media (min-width: 769px) { .List-item { width: 33.33%; } }
+@media (min-width: 1201px) { .List-item { width: 25%; } }
+@media (min-width: 2001px) { .List-item { width: 16.66%; } }
+@media (min-width: 3001px) { .List-item { width: 10%; } }
+
+.List-itemLink {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.List-itemImg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 56.25%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.List-itemTitle {
+  font-size: 16px;
+  line-height: 18px;
+}

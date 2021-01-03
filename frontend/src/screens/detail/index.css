@@ -1,0 +1,73 @@
+.Detail {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: 0 0, 100vw auto;
+  padding: 225px 15px 30px;
+  overflow: hidden;
+}
+
+.Detail-price {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Detail-heading {
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 38px;
+  color: #29c7ac;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.Detail-genre {
+  font-size: 16px;
+  line-height: 18px;
+  color: darkgray;
+  margin-bottom: 15px;
+}
+
+.Detail-plot {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.Detail-list {
+  margin-bottom: 15px;
+}
+
+.Detail-listKey {
+  color: darkgray;
+}
+
+@media (min-width: 769px) {
+  .Detail {
+    height: calc(100vh - 107px);
+    background-position: center, -30vw center;
+    background-size: cover;
+    padding: 60px 10vw 30px 55vw;
+    overflow-y: auto;
+  }
+
+  .Detail-heading {
+    font-size: 58px;
+    line-height: 62px;
+  }
+
+  .Detail-genre {
+    font-size: 23px;
+    line-height: 26px;
+    margin-bottom: 45px;
+  }
+
+  .Detail-plot {
+    font-size: 23px;
+    line-height: 32px;
+    margin-bottom: 45px;
+  }
+}
