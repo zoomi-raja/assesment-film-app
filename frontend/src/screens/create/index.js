@@ -98,8 +98,7 @@ function Create({onAdd}) {
         {errors.genres && <span className="error">{errors.genres}</span>}
       </label>
       <label className="Form-label" htmlFor="retype-password">
-        <span className="Form-text">Description</span>
-        <input value={description} onChange={(e)=>setDescription(e.target.value)} className="Form-input" name="description" type="text" placeholder="Description" required/>
+        <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className="Form-textarea" name="description" type="text" placeholder="Description" required/>
         {errors.description && <span className="error">{errors.description}</span>}
       </label>
 

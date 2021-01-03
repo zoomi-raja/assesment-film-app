@@ -1,0 +1,88 @@
+.Comments {
+  padding-top: 30px;
+  border-top: 1px dashed #333;
+  margin-top: 30px;
+}
+
+@media (min-width: 769px) {
+  .Comments {
+    padding-top: 45px;
+    margin-top: 45px;
+  }
+}
+
+.Comments-heading {
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 769px) {
+  .Comments-heading {
+    font-size: 23px;
+    line-height: 26px;
+  }
+}
+
+.Comments-form {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Comment {
+  display: flex;
+  margin-top: 30px;
+}
+
+@media (min-width: 769px) {
+  .Comment {
+    margin-top: 45px;
+  }
+}
+
+.Comment-image {
+  height: 40px;
+  flex: 0 0 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.Comment-name {
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.Comment-copy {
+  font-size: 14px;
+  line-height: 20px;
+  color: darkgray;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Comment-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.Comment-timestamp {
+  display: block;
+}
+
+.Comment-btn:hover {
+  background-color: #222;
+}
+
+.Comment-btn:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+}

@@ -6,6 +6,7 @@ import { NoRecord } from "../../compnents/ui/no-record/no-record";
 //components
 import {Spinner} from '../../compnents/ui/spinner';
 import { requestApi } from "../../utilities/request";
+import Comment from "../../compnents/comments";
 
 // styles
 import './index.css';
@@ -61,6 +62,7 @@ function Detail() {
           <span className="Detail-listKey">Released: </span>
           <span>{film.rel_date}</span>
         </div>
+        <Comment data={film.comments}/>
       </div>
     )
   }
