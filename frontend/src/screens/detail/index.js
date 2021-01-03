@@ -18,14 +18,14 @@ function Detail() {
   useEffect(()=>{
     async function fetchDate(){
       const films = await requestApi({url:`/film/${slug}`});
-      if(films.statusCode == 404){
+      if(!films || films.statusCode === 404){
         setFilm({notfound:true});
       }else{
         setFilm({...films});
       }
     }
     fetchDate();
-  },[setFilm]);
+  },[setFilm,slug]);
 
   const handleNewComment = (comment) => {
     setFilm({

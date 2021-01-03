@@ -1,7 +1,11 @@
-// styles
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Calendar from 'react-calendar';
+
+// styles
 import '../../form.css';
+import 'react-calendar/dist/Calendar.css';
+
 import { requestApi } from '../../utilities/request';
 
 function Create({onAdd}) {
@@ -35,6 +39,10 @@ function Create({onAdd}) {
       setErrors(errorObj);
     }
   }
+  const handleDateChange = (value) => {
+    const dValue = new Date(value);
+    setRelease(`${dValue.getDate()}-${(dValue.getMonth()+1)}-${(dValue.getFullYear())}`);
+  }
   const handleRegister = async (e)=>{
     e.preventDefault();
     const data = {name, rating, country, description, rel_date:release, genre_ids:genreIds, ticket_price:price};
@@ -61,25 +69,25 @@ function Create({onAdd}) {
 
       <label className="Form-label" htmlFor="email">
         <span className="Form-text">Price</span>
-        <input name={price} onChange={(e)=>setPrice(parseInt(e.target.value))} className="Form-input" name="price" type="number" placeholder="Enter ticket price" required/>
+        <input value={price} onChange={(e)=>setPrice(parseInt(e.target.value))} className="Form-input" name="price" type="number" placeholder="Enter ticket price" required/>
         {errors.ticket_price && <span className="error">{errors.ticket_price}</span>}
       </label>
 
       <label className="Form-label" htmlFor="email">
         <span className="Form-text">Rating</span>
-        <input name={rating} onChange={(e)=>setRating(parseInt(e.target.value))} className="Form-input" name="rating" type="number" placeholder="Enter Rating" required/>
+        <input value={rating} onChange={(e)=>setRating(parseInt(e.target.value))} className="Form-input" name="rating" type="number" placeholder="Enter Rating" required/>
         {errors.rating && <span className="error">{errors.rating}</span>}
       </label>
 
       <label className="Form-label" htmlFor="password">
         <span className="Form-text">Country</span>
-        <input name={country} onChange={(e)=>setCountry(e.target.value)} className="Form-input" name="country" type="text" placeholder="Movie Country" required/>
+        <input value={country} onChange={(e)=>setCountry(e.target.value)} className="Form-input" name="country" type="text" placeholder="Movie Country" required/>
         {errors.country && <span className="error">{errors.country}</span>}
       </label>
 
       <label className="Form-label" htmlFor="retype-password">
         <span className="Form-text">Release Date</span>
-        <input value={release} onChange={(e)=>setRelease(e.target.value)} className="Form-input" name="release" type="text" placeholder="Release Date" required/>
+        <Calendar name="release" onChange={handleDateChange}/>
         {errors.rel_date && <span className="error">{errors.rel_date}</span>}
       </label>
 

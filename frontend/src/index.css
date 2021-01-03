@@ -12,3 +12,6 @@ body {
   color: white;
   margin: 0;
 }
+.react-calendar__month-view__weekdays{
+  color: red;
+}

@@ -32,7 +32,7 @@ function App(){
   useEffect(()=>{
     async function fetchDate(){
       const films = await requestApi({url:'/film'});
-      if(films.items)
+      if(films && films.items)
         setFilms({loading:false,data:films.items});
     }
     fetchDate();
