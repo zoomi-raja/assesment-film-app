@@ -23,6 +23,8 @@ export class FilmService {
   async saveFilm(film: Film): Promise<Film> {
     film.slug = `${film.name}-${Date.now()}`;
     film.genres = await this.genreService.getGenresByIds(film.genre_ids);
+    //todo dumy avatar as of now
+    film.photo = 'https://images-na.ssl-images-amazon.com/images/M/MV5BNDIwMDIxNzk3Ml5BMl5BanBnXkFtZTgwMTg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg';
     /** validate if provided genre exists */
     if (film.genres.length <= 0) {
       const errors: Error[] = [];

@@ -21,7 +21,7 @@ function getCookie(name){
 /**save logged user info */
 export function saveUser({user,token}){
   localStorage.setItem("user", JSON.stringify(user));
-  localStorage.setItem("film-token", token);
+  localStorage.setItem("film-token", token.access_token);
 }
 /** check if user have jwt token in cookie */
 export function isAuth(){

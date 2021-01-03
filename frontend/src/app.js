@@ -37,6 +37,18 @@ function App(){
     fetchDate();
   },[setFilms]);
 
+  const handleNewImage = (film) => {
+    setFilms((prev)=>{
+      return {
+        ...prev,
+        data:[
+          ...prev.data,
+          film
+        ]
+      }
+    })
+  }
+
   return (
   <Router>
     <authContext.Provider value={{loggedIn,setLoggedIn}}>
@@ -46,9 +58,11 @@ function App(){
             <List data={ films.data } />
           </Route>
 
-          <Route path="/films/create">
-            <Create />
-          </Route>
+          {isAuth() && 
+            <Route path="/films/create">
+              <Create onAdd={handleNewImage}/>
+            </Route>
+          }
 
           <Route path="/films/:slug">
             <Detail />
