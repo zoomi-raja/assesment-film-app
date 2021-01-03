@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
+
 import config from '../../../config';
+//auth context
+import { authContext } from '../../../context/auth';
+//utils
+import { saveUser } from '../../../utilities/auth';
 // styles
 import '../../../form.css';
-import { saveUser } from '../../../utilities/auth';
 
 function Login() {
   //states
@@ -11,6 +15,8 @@ function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const [toHome,setToHome] = useState(false);
+  //auth context
+  const {loggedIn,setLoggedIn} = useContext(authContext);
 
   //utilityfunction
   const handleEmail = (e) => {
@@ -33,6 +39,7 @@ function Login() {
       else{
         saveUser(response);
         setToHome(true);
+        setLoggedIn(true);
       }
       
     }catch(e){

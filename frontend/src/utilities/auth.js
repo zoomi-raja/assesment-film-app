@@ -30,3 +30,8 @@ export function isAuth(){
   else
     return false;
 }
+
+export function logout(){
+  localStorage.removeItem('film-token')
+  localStorage.removeItem('user')
+}
