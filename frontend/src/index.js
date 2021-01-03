@@ -1,12 +1,13 @@
 // libraries
 import { Fragment, StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 // components
 import List from './screens/list';
 import Header from './compnents/header';
 import Detail from './screens/detail';
+import NotFound from './screens/not-found'
 
 // styles
 import './index.css';
@@ -28,9 +29,13 @@ ReactDOM.render(
           <Route path="/films/:slug">
             <Detail />
           </Route>
+
+          <Route exact path="/">
+            <Redirect to="/films" />
+          </Route>
   
           <Route path="*">
-            <h1>no page found</h1>
+            <NotFound />
           </Route>
         </Switch>
       </Fragment>

@@ -1,5 +1,5 @@
 // libraries
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // data
 import films from '../../movies.json';
