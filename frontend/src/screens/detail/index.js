@@ -27,6 +27,16 @@ function Detail() {
     fetchDate();
   },[setFilm]);
 
+  const handleNewComment = (comment) => {
+    setFilm({
+      ...film,
+      comments: [
+        ...film.comments,
+        comment
+      ]
+    })
+  };
+
   let html = <Spinner />
   if(film.id){
     html = (
@@ -62,7 +72,7 @@ function Detail() {
           <span className="Detail-listKey">Released: </span>
           <span>{film.rel_date}</span>
         </div>
-        <Comment data={film.comments}/>
+        <Comment data={film.comments} film_id={film.id} onAdd={handleNewComment}/>
       </div>
     )
   }
