@@ -1,5 +1,7 @@
 # Manage Film Application
 
+<img src=“https://github.com/zoomi-raja/assesment-film-app/blob/main/screen1.png”>
+
 ## Assessment Test solution
 
 Each entity of application lies in its separate codebase. docker is used to spin up everything all together
