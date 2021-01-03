@@ -1,5 +1,6 @@
 # Film Application
 
+![picture](screen4.png)
 ![picture](screen3.png)
 ![picture](screen1.png)
 ![picture](screen2.png)
@@ -14,6 +15,10 @@ Each entity of application lies in its separate codebase. docker is used to spin
 `Technolog used`
 - [nestjs](https://nestjs.com/)
 - [react](https://reactjs.org/)
+
+`Default user`
+- admin@test.com
+- password
 
 **Minor detail why i went with following architecture**
 
